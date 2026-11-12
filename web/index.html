@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>麻雀 何切る 200問</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <h1>🀄 麻雀 何切る 200問 <small>赤ありリーグルール</small></h1>
+    <div id="stats" class="stats" aria-live="polite"></div>
+  </div>
+</header>
+
+<main>
+  <nav class="nav" aria-label="問題の移動">
+    <button id="btn-prev" type="button">← 前の問題</button>
+    <label class="jump">問題
+      <select id="jump" aria-label="問題番号を選択"></select>
+    </label>
+    <button id="btn-next" type="button">次の問題 →</button>
+    <button id="btn-random" type="button" class="ghost">未回答からランダム</button>
+  </nav>
+
+  <section class="card" id="situation-card">
+    <h2 id="q-title">第1問</h2>
+    <div id="chips" class="chips"></div>
+
+    <div class="table" id="table"></div>
+
+    <div class="dora-row">
+      <span class="label">ドラ表示牌</span><span id="indicator"></span>
+      <span class="arrow">→ ドラ</span><span id="dora"></span>
+      <span class="rule">赤ドラ：5萬・5筒・5索 各1枚</span>
+    </div>
+
+    <p class="prompt" id="prompt">4家の河・副露・リーチを見て、手牌から<strong>切る牌</strong>を1枚選んでください（河は左上から捨てた順、横向きの牌はリーチ宣言牌）</p>
+    <div id="hand" class="hand" role="group" aria-label="手牌"></div>
+  </section>
+
+  <section class="card" id="result" hidden></section>
+</main>
+
+<footer>
+  <span>牌表示：Unicode「麻雀牌」(U+1F000〜)　／　評価は簡易アルゴリズムによる目安です</span>
+  <button id="btn-reset" type="button" class="link">成績をリセット</button>
+</footer>
+
+<script src="problems.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
